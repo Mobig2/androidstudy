@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hello</string>
+    <string name="hello_world">Text test</string>
+    <string name="action_settings">눌러봐</string>
+
+</resources>

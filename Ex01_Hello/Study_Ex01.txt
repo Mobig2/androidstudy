@@ -1,0 +1,125 @@
+[안드로이드 프로젝트 생성]
+#Crtl + Shift + O(영문자) -> 필요한 라이브러리 자동 임포트 단축키
+#중간중간 빨간줄 생기면 프로젝트 Clean해주면 R.java가 순서대로 다시 읽어들인다.
+				  
+	-버전설정
+		최소 버전 API15 (4.0부터 액션바 지원하기 때문, 유니티도 4.0이하에서 문제가 있음)
+		타겟은 최소버전 이상 어느버전이던 상관없음
+		컴파일버전은 타겟보다 상위버전이어도 타겟,최소버전에 맞게 컴파일한다.
+
+	-패키지명 설정
+		ex)com.study.exam01 - > Java의 패키지개념으로 만들어진 패키지이다. 실제경로 com\study\exam01 에 java가 존재한다.
+		패키지는 프로젝트간에 서로 겹치지 않기 위해서 사용한다.
+		
+	-아이콘설정
+		아이콘은 프로젝트 마지막에 변경한다. (굳이 먼저 할 필요없음)
+
+	-Activity name 설정
+		Activity name은 Class name 이다.
+		Layout Name은 파일명(대문자 사용시 에러, 단어 구분시 '_' 로 구분)
+		
+		
+		예)main_activity.xml 화면이 안보일경우 안드로이드 버전을 하위로 바꿔본다.
+
+	-클래스 생성 
+		 해당패키지 아래에 생성한다.
+		 안드로이드는 모두 Activity 상속받는다.(클래스 추가로 생성시 superclass를 android.app.Activity로 설정)
+		 새로 클래스 생성 시 내용이없다. 그때 Source->Override/Implement Methods 에서 Activity의 함수를 선택해서 필요한 함수 기본형을 추가 할 수 있다.
+		 그 후 AndroidManifest.xml에 <application> 안에 추가한 클래스 정보<activity>를 추가한다.
+		 
+	-프로젝트 디렉터리 구조
+		 gen 	: eclipse 내부에서 개발자가 소스수정한 사항에대해 내부타이머 기준으로 생성하는 파일| R.java에 res에 추가된파일 정보(ID)가 저장됨
+		 
+		 asset	: 폰트, 사운드등 res에 저장되지 않는 리소스가 저장된다.
+		 
+		 bin 	: 컴파일 시 파일이 생성되는 경로
+		 
+		 libs	: 외부라이브러리 참조시 이 경로에 추가(라이브러리마다 추가경로에 대한 정보를 제공한다.)
+		 
+		 res 	: 리소스가 저장되는 디렉터리 (소문자로 생성)
+				   drawable-hdpi ~ xxhdpi(해상도별로 리소스를 따로 관리하기 위해 나뉘어져있다. 
+										  사용하지 않는 해상도는 용량만 차지하기때문에 사용하는 것에만 추가한다. 타겟해상도가 아닐 경우 자동으로 리사이징이된다.)
+				   layout(화면을 그리는 정보가 들어있다. 정확하게 layout에 표시된대로 실행되진않음.. 실제로 실행해서 조정필요.
+						  xml로 저장됨. 클래스명과 동일시하는것이 관리하기 편하다.)
+				   menu(메뉴)
+				   values(다국어 설정 시 string.xml에 각각 언어별로 지정하여 사용 할 수있음)
+						  예)string_kr.xml, string_fr.xml, string_en.xml
+
+	아이폰은 멀티스레드가 없음 (현재실행되는어플외에는 모두 슬립 자체제공기능 몇개 제외하고 모두다)
+		- 인증서 어플외에 상호 어플간 접근불가 (애플)
+		- 안드로이드는 상관 없음
+			
+	Cocos2dx의 Director의 같은 역할을 안드로이드OS가 한다.
+		Intent -> 목적 ~~을 실행해라
+
+
+[소스 설명]	   
+-MainActivity.java 
+ @Override	-> eclipse가 함수가 Override 된 것을 구분하려고 표시한것이다.
+ onCreate(Bundle savedInstanceState) 	-> cocos2dx에 init() 부분과 같다.
+ onCreateOptionsMenu(Menu menu)			-> 옵션메뉴가 선택될 때 실행된다. (매번 만들어지므로 자동으로 생성해놓음)
+ onOptionsItemSelected(MenuItem item) 	-> 옵션메뉴에 메뉴가 선택될때
+ 
+ -Manifest 
+<manifest
+   android:versionCode="1" 		-> 프로젝트 버전설정
+   android:versionName="1.0"	-> 프로젝트 이름구분
+>
+<uses-sdk
+   android:minSdkVersion="15" 	-> 최소 안드로이드 버전
+   android:targetSdkVersion="21"-> 타겟 안드로이드 버전
+>
+<application   
+    android:allowBackup="true"
+    android:icon="@drawable/ic_launcher"
+    android:label="@string/app_name"
+    android:theme="@style/AppTheme"
+
+//클래스하나하나가 Activity (Scene과 동일한 동작, MAIN은 하나 만 존재 새로 생성할때마다 <activity></activity>)
+<activity			
+	android:name=".MainActivity" ->'.'은 manifest에 지정한 패키지 네임을 다 넣어준다.   '.' is com.study.exam01 
+>
+	<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+			
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

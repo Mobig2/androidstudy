@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="화면1" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="화면2" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="화면3" />
+
+    </LinearLayout>
+    
+ 	<FrameLayout
+        android:id="@+id/contentsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/bottomLayout"
+        android:layout_below="@+id/tabLayout"
+        android:layout_weight="1" >
+
+ 		<LinearLayout
+ 		    android:id="@+id/Layout1"
+ 		    android:layout_width="match_parent"
+ 		    android:layout_height="match_parent"
+ 		    android:background="#88ff0000"
+ 		    android:orientation="vertical" >
+
+ 			<ImageView
+ 			    android:id="@+id/imageView1"
+ 			    android:layout_width="wrap_content"
+ 			    android:layout_height="wrap_content"
+ 			    android:src="@drawable/car" />
+
+ 			<Button
+ 			    android:id="@+id/button6"
+ 			    android:layout_width="wrap_content"
+ 			    android:layout_height="wrap_content"
+ 			    android:text="이미지바꾸기" />
+
+ 		</LinearLayout>
+
+ 		<LinearLayout
+ 		    android:id="@+id/Layout2"
+ 		    android:layout_width="match_parent"
+ 		    android:layout_height="match_parent"
+ 		    android:background="#880000ff"
+ 		    android:orientation="vertical"
+ 		    android:visibility="gone" >
+
+ 		</LinearLayout>
+
+ 		<LinearLayout
+ 		    android:id="@+id/Layout3"
+ 		    android:layout_width="match_parent"
+ 		    android:layout_height="match_parent"
+ 		    android:background="#8800ff00"
+ 		    android:orientation="vertical"
+ 		    android:visibility="gone" >
+
+ 		</LinearLayout>
+
+    </FrameLayout>
+    
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp" >
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10"
+            android:padding="0dp"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10"
+            android:padding="0dp"
+            android:text="Button" />
+    </LinearLayout>
+
+  
+
+</RelativeLayout>
