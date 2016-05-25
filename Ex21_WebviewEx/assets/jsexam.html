@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8" /> 	
+	<meta name="viewport" 
+			content="width=device-width,
+			initial-scale=1.0, 
+			maximum-scale=1.0,
+			minimum-scale=1.0, 
+			user-scalable=no"/>	
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!-- default / black / black-translucent -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+	<title>HTML5</title> 
+
+<script language="JavaScript">
+
+function callAndroidApk()
+{
+	alert("test");
+	window.android.test();
+	window.android.testParams("이건 값이당");
+}
+
+function setMessage(arg)
+{
+	document.getElementById("demo").innerHTML = arg;
+}
+
+function myAlert()
+{
+	alert("JavaScript 알림이용!");
+}
+
+function myConfirm()
+{
+	var x;
+	var r=confirm("Press a button!");
+	if (r==true)
+	{
+		x="You pressed OK!";
+	}
+	else
+	{
+		x="You pressed Cancel!";
+	}
+	document.getElementById("demo").innerHTML=x;
+}
+
+</script>
+
+</head> 
+<body style="background-color:white;color:black">  
+
+<a href="javascript:callAndroidApk();">안드로이드 내부 함수 부르기</a>
+
+<br><p>
+
+JavaScript Alert : <a href="javascript:myAlert();">click here</a><br><p>
+JavaScript Confirm : <a href="javascript:myConfirm();">click here</a><br><p>
+
+<p id="demo"></p>
+
+<br><p>
+<br><p>
+
+<!--
+1. AndroidManifest.xml파일에 퍼미션을 지정(전화, SMS, 지도)
+2. 메일 보내기의 경우, 메일 셋팅 후 메일 보내기 가능.
+3. 지도 서비스의 경우, 인터넷이 되는지와 android 에뮬이아닌, google 에뮬을 사용해야 함
+-->
+
+<a href='mailto:gikimirane@naver.com'>메일 ToOOO</a><br><p>
+<a href='tel:01074693800'>전화</a><br><p>
+<a href='sms:01074693800'>문자</a><br><p>
+<a href='geo:37.503682,127.024106?z=16'>강남교보문고</a><br><p>
+<a href='http://m.google.com'>구글링크</a><br><p>
+
+</body>
+</html>
