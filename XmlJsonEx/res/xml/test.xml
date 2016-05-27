@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<voca>
+    <words>
+        <number>0</number>
+        <word>aaa<any>any text</any>bbb</word>
+        <mean>동해물과</mean>
+    </words>
+    <words>
+        <number>1</number>
+        <word>apt</word>
+        <mean>백두산이</mean>
+    </words>
+    <words>
+        <number>2</number>
+        <word>apt</word>
+        <mean>마르고</mean>
+    </words>
+    <words>
+        <number>3</number>
+        <word>astonish</word>
+        <mean>닳도록</mean>
+    </words>
+    <words>
+        <number>4</number>
+        <word>chronic</word>
+        <mean>하느님이</mean>
+    </words>
+    <words>
+        <number>5</number>
+        <word>dirty</word>
+        <mean>보우하사</mean>
+    </words>
+</voca>
